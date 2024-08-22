@@ -63,7 +63,6 @@ function startTheGame(){
     // Game Functions
     function main(ctime) {
         window.requestAnimationFrame(main);
-        // console.log(ctime)
         if((ctime - lastPaintTime)/1000 < 1/speed){
             return;
         }
