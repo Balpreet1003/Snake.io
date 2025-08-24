@@ -93,7 +93,7 @@ function startTheGame(){
             score = 0; 
             speed=3;
             scoreBox.innerHTML = "Score: " + score; //
-            alert("Game Over. Press any key to play again!");
+            alert("Game Over. Press OK to play again!");
             snakeArr = [{x: 13, y: 15}];
             musicSound.play();
         }
