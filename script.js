@@ -24,7 +24,6 @@ function startTheGame(){
     // Remove the start interface
     document.body.removeChild(startInterface);
 
-
     // creating body of main game
     const bodyDiv = document.createElement('div');
     bodyDiv.className = 'body';
@@ -91,11 +90,12 @@ function startTheGame(){
             gameOverSound.play();
             musicSound.pause();
             inputDir =  {x: 0, y: 0}; 
+            score = 0; 
+            speed=3;
+            scoreBox.innerHTML = "Score: " + score; //
             alert("Game Over. Press any key to play again!");
             snakeArr = [{x: 13, y: 15}];
             musicSound.play();
-            score = 0; 
-            speed=3;
         }
     
         // If you have eaten the food, increment the score and regenerate the food
@@ -109,7 +109,7 @@ function startTheGame(){
             }
             scoreBox.innerHTML = "Score: " + score;
             snakeArr.unshift({x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y});
-            speed+=1;
+            speed+=0.5;
             let a = 2;
             let b = 16;
             food = {x: Math.round(a + (b-a)* Math.random()), y: Math.round(a + (b-a)* Math.random())}
